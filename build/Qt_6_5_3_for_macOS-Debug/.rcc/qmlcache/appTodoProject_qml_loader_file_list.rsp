@@ -1,0 +1,9 @@
+/qt/qml/TodoProject/qml/Main.qml
+/qt/qml/TodoProject/qml/customcomponents/Header.qml
+/qt/qml/TodoProject/qml/screens/ToDoListScreen.qml
+/qt/qml/TodoProject/qml/screens/HomeScreen.qml
+/qt/qml/TodoProject/qml/screens/CreateListScreen.qml
+/qt/qml/TodoProject/qml/customcomponents/InputField.qml
+/qt/qml/TodoProject/qml/customcomponents/ConfirmButton.qml
+/qt/qml/TodoProject/qml/screens/EditListScreen.qml
+/qt/qml/TodoProject/qml/customcomponents/TextButton.qml

@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/qt/qml/TodoProject/">
+    <file alias="qml/Main.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/Main.qml</file>
+    <file alias="qml/customcomponents/Header.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/customcomponents/Header.qml</file>
+    <file alias="qml/screens/ToDoListScreen.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/screens/ToDoListScreen.qml</file>
+    <file alias="qml/screens/HomeScreen.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/screens/HomeScreen.qml</file>
+    <file alias="qml/screens/CreateListScreen.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/screens/CreateListScreen.qml</file>
+    <file alias="qml/customcomponents/InputField.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/customcomponents/InputField.qml</file>
+    <file alias="qml/customcomponents/ConfirmButton.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/customcomponents/ConfirmButton.qml</file>
+    <file alias="qml/screens/EditListScreen.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/screens/EditListScreen.qml</file>
+    <file alias="qml/customcomponents/TextButton.qml">/Users/filip.petkovski/Desktop/TodoProject/qml/customcomponents/TextButton.qml</file>
+  </qresource>
+</RCC>
+

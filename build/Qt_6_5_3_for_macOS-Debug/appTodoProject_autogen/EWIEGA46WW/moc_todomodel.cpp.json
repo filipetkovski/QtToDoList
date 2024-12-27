@@ -1,0 +1,57 @@
+{
+    "classes": [
+        {
+            "className": "ToDoModel",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "addList",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "getListModel",
+                    "returnType": "ListModel*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "deleteList",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "getListSize",
+                    "returnType": "int"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "ToDoModel",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "todomodel.h",
+    "outputRevision": 68
+}

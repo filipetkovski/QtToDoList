@@ -1,0 +1,13 @@
+module TodoProject
+typeinfo appTodoProject.qmltypes
+prefer :/qt/qml/TodoProject/
+Main 1.0 qml/Main.qml
+Header 1.0 qml/customcomponents/Header.qml
+ToDoListScreen 1.0 qml/screens/ToDoListScreen.qml
+HomeScreen 1.0 qml/screens/HomeScreen.qml
+CreateListScreen 1.0 qml/screens/CreateListScreen.qml
+InputField 1.0 qml/customcomponents/InputField.qml
+ConfirmButton 1.0 qml/customcomponents/ConfirmButton.qml
+EditListScreen 1.0 qml/screens/EditListScreen.qml
+TextButton 1.0 qml/customcomponents/TextButton.qml
+

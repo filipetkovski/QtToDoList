@@ -1,0 +1,4 @@
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/appTodoProject_autogen/include/../EWIEGA46WW/moc_listfiltermodel.cpp.json
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/appTodoProject_autogen/include/../EWIEGA46WW/moc_listmodel.cpp.json
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/appTodoProject_autogen/include/../EWIEGA46WW/moc_todofiltermodel.cpp.json
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/appTodoProject_autogen/include/../EWIEGA46WW/moc_todomodel.cpp.json
