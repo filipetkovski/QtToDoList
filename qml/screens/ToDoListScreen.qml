@@ -9,6 +9,12 @@ import "../customcomponents"
 Rectangle {
     id: toDoListScreen
     property int idList: -1
+    property bool dragTxtVisible: false
+
+    signal resetDragTxtVisible
+
+    onResetDragTxtVisible: dragTxtVisible = false
+
     onIdListChanged: {
         var objList = toDoModelId.getListModel(idList)
         listFilterModelId.sourceModel = objList
@@ -17,7 +23,7 @@ Rectangle {
 
     Header {
         id: headerTDListScreenId
-        width: 250
+        width: tasksViewId.count <= 1 ? 230 : 320
         Text {
             id: headerBackTxtTDScreenId
             text: qsTr("My List")
@@ -30,9 +36,7 @@ Rectangle {
                 anchors.fill: headerBackTxtTDScreenId
                 cursorShape: Qt.PointingHandCursor
 
-                onClicked: {
-                    windowStackView.pop()
-                }
+                onClicked: windowStackView.pop()
             }
         }
 
@@ -41,7 +45,7 @@ Rectangle {
             text: qsTr("Edit")
             color: "blue"
             font { pixelSize: 20; bold: true; underline: true; }
-            anchors { verticalCenter: parent.verticalCenter; left: headerBackTxtTDScreenId.left; leftMargin: 90 }
+            anchors { verticalCenter: parent.verticalCenter; left: headerBackTxtTDScreenId.left; leftMargin: 80 }
 
             MouseArea {
                 id: clickTxtEditId
@@ -49,6 +53,23 @@ Rectangle {
                 cursorShape: Qt.PointingHandCursor
 
                 onClicked: windowStackView.push("EditListScreen.qml", {"modelIndex": idList})
+            }
+        }
+
+        Text {
+            id: listReorderId
+            text: qsTr("Reorder")
+            color: "blue"
+            font { pixelSize: 20; bold: true; underline: true; }
+            anchors { verticalCenter: parent.verticalCenter; left: listEditId.left; leftMargin: 50 }
+            visible: tasksViewId.count <= 1 ? false : true
+
+            MouseArea {
+                id: clickTxtReorderId
+                anchors.fill: listReorderId
+                cursorShape: Qt.PointingHandCursor
+
+                onClicked: dragTxtVisible = !dragTxtVisible
             }
         }
     }
@@ -62,6 +83,13 @@ Rectangle {
         color: "black"
     }
 
+    DelegateModel {
+        id: visualModel
+
+        model: listFilterModelId
+        delegate: ActiveTasksComponent {}
+    }
+
     //Active Tasks
     ListView {
         id: tasksViewId
@@ -69,29 +97,10 @@ Rectangle {
         height: contentHeight < 500 ? contentHeight : 500
         anchors { top: listNameId.bottom; topMargin: 5 }
 
-        model: listFilterModelId
+        model: visualModel
 
         spacing: 1
-
-        delegate: RowLayout {
-            height: 30
-
-            //CheckBox------------------
-            CheckBox {
-                checked: RoleIsDone
-                //Task Name
-                Text {
-                    text: RoleName
-                    color: "black"
-                    anchors { left: parent.right; leftMargin: 5; }
-                    font.pixelSize: 16
-                }
-
-                onCheckedChanged: {
-                    listDoneFilterModelId.sourceModel.changeStatus(listFilterModelId.sourceIndex(index), checked)
-                }
-            }
-        }
+        cacheBuffer: 50
     }
 
     //Add another task-------------------
@@ -109,6 +118,7 @@ Rectangle {
         id: addTaskInputId
         height: 170
         anchors { top: tasksViewId.bottom; topMargin: 15; }
+
         InputField {
             id: inputTDListScreenId
             width: rec.width
@@ -148,61 +158,51 @@ Rectangle {
         anchors.topMargin: 15
         model: listDoneFilterModelId
 
+        visible: !dragTxtVisible
+
         spacing: 1
 
-        delegate: RowLayout {
-            height: 30
+        delegate:
+            RowLayout {
+                height: 30
 
-            //CheckBox------------------
-            CheckBox {
-                checked: RoleIsDone
+                //CheckBox------------------
+                CheckBox {
+                    checked: RoleIsDone
 
-                //Task Name
-                Text {
-                    text: RoleName
-                    anchors { left: parent.right; leftMargin: 5; }
-                    color: "black"
-                    font.pixelSize: 16
-                }
+                    //Task Name
+                    Text {
+                        text: RoleName
+                        anchors { left: parent.right; leftMargin: 5; }
+                        color: "gray"
+                        font.pixelSize: 13
+                    }
 
-                onCheckedChanged: {
-                    listDoneFilterModelId.sourceModel.changeStatus(listDoneFilterModelId.sourceIndex(index), checked)
+                    onCheckedChanged: listDoneFilterModelId.sourceModel.changeStatus(listDoneFilterModelId.sourceIndex(index), checked)
                 }
             }
-        }
     }
 
     states: [
         State {
             name: "addTxtVisible"
-            PropertyChanges {
-                target: addTaskTxtId
-                visible: true
-            }
-            PropertyChanges {
-                target: addTaskInputId
-                visible: false
-            }
-            AnchorChanges {
-                target: tasksDoneViewId
-                anchors.top: addTaskTxtId.bottom
-            }
+            PropertyChanges { target: addTaskTxtId; visible: true }
+            PropertyChanges { target: addTaskInputId; visible: false }
+            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskTxtId.bottom }
         },
         State {
             name: "addInputVisible"
-            PropertyChanges {
-                target: addTaskTxtId
-                visible: false
-            }
-            PropertyChanges {
-                target: addTaskInputId
-                visible: true
-            }
-            AnchorChanges {
-                target: tasksDoneViewId
-                anchors.top: addTaskInputId.bottom
-            }
+            PropertyChanges { target: addTaskTxtId; visible: false }
+            PropertyChanges { target: addTaskInputId; visible: true }
+            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskInputId.bottom }
+        },
+        State {
+            name: "nothingVisible"
+            PropertyChanges { target: addTaskTxtId; visible: false }
+            PropertyChanges { target: addTaskInputId; visible: false }
+            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskInputId.bottom }
         }
     ]
-    state: "addTxtVisible"
+
+    state: dragTxtVisible ? "nothingVisible" : "addTxtVisible"
 }

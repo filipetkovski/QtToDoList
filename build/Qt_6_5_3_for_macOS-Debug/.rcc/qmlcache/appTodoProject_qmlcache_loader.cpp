@@ -68,6 +68,13 @@ namespace _qt_qml_TodoProject_qml_customcomponents_TextButton_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
     };
 }
+namespace _qt_qml_TodoProject_qml_customcomponents_ActiveTasksComponent_qml { 
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::TypedFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], nullptr
+    };
+}
 
 }
 namespace {
@@ -91,6 +98,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TodoProject/qml/customcomponents/ConfirmButton.qml"), &QmlCacheGeneratedCode::_qt_qml_TodoProject_qml_customcomponents_ConfirmButton_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TodoProject/qml/screens/EditListScreen.qml"), &QmlCacheGeneratedCode::_qt_qml_TodoProject_qml_screens_EditListScreen_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TodoProject/qml/customcomponents/TextButton.qml"), &QmlCacheGeneratedCode::_qt_qml_TodoProject_qml_customcomponents_TextButton_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/TodoProject/qml/customcomponents/ActiveTasksComponent.qml"), &QmlCacheGeneratedCode::_qt_qml_TodoProject_qml_customcomponents_ActiveTasksComponent_qml::unit);
     QQmlPrivate::RegisterQmlUnitCacheHook registration;
     registration.structVersion = 0;
     registration.lookupCachedQmlUnit = &lookupCachedUnit;

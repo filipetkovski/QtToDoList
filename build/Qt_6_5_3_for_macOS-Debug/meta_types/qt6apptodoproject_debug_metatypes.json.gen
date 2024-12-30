@@ -83,6 +83,21 @@
                         ],
                         "name": "changeStatus",
                         "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index1",
+                                "type": "int"
+                            },
+                            {
+                                "name": "index2",
+                                "type": "int"
+                            }
+                        ],
+                        "name": "reorderTasks",
+                        "returnType": "void"
                     }
                 ],
                 "object": true,

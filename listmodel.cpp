@@ -92,3 +92,12 @@ void ListModel::changeStatus(int idX, bool isChecked)
         }
     }
 }
+
+void ListModel::reorderTasks(int index1, int index2)
+{
+    if(index1 != index2){
+        beginMoveRows(QModelIndex(), index1, index1, QModelIndex(), index2+1);
+        tasks_list.move(index1, index2);
+        endMoveRows();
+    }
+}

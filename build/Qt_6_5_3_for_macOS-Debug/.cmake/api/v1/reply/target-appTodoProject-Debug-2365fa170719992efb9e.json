@@ -99,13 +99,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 51,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 46,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -632,6 +632,18 @@
 				"parent" : 61
 			},
 			{
+				"command" : 23,
+				"file" : 5,
+				"line" : 2072,
+				"parent" : 61
+			},
+			{
+				"command" : 23,
+				"file" : 5,
+				"line" : 2225,
+				"parent" : 61
+			},
+			{
 				"command" : 27,
 				"file" : 5,
 				"line" : 2308,
@@ -641,19 +653,19 @@
 				"command" : 26,
 				"file" : 0,
 				"line" : 314,
-				"parent" : 100
+				"parent" : 102
 			},
 			{
 				"command" : 25,
 				"file" : 0,
 				"line" : 2055,
-				"parent" : 101
+				"parent" : 103
 			},
 			{
 				"command" : 23,
 				"file" : 0,
 				"line" : 1708,
-				"parent" : 102
+				"parent" : 104
 			},
 			{
 				"command" : 29,
@@ -665,7 +677,7 @@
 				"command" : 23,
 				"file" : 0,
 				"line" : 1792,
-				"parent" : 104
+				"parent" : 106
 			}
 		]
 	},
@@ -862,7 +874,8 @@
 				29,
 				31,
 				33,
-				34
+				35,
+				36
 			]
 		}
 	],
@@ -877,11 +890,11 @@
 			"id" : "appTodoProject_qmlimportscan::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appTodoProject_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "appTodoProject_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "appTodoProject_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appTodoProject::@6890427a1f51a3e7e1df",
@@ -1023,7 +1036,8 @@
 				29,
 				31,
 				33,
-				34
+				35,
+				36
 			]
 		},
 		{
@@ -1051,23 +1065,22 @@
 				28,
 				30,
 				32,
-				35,
-				36,
-				53,
-				54,
-				55,
+				34,
+				37,
+				38,
 				56,
 				57,
 				58,
-				59
+				59,
+				60,
+				61,
+				62
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				37,
-				38,
 				39,
 				40,
 				41,
@@ -1081,7 +1094,10 @@
 				49,
 				50,
 				51,
-				52
+				52,
+				53,
+				54,
+				55
 			]
 		}
 	],
@@ -1280,25 +1296,37 @@
 		},
 		{
 			"backtrace" : 98,
-			"path" : "qml/customcomponents/CancelButton.qml",
+			"path" : "qml/customcomponents/TextButton.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 99,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/CancelButton_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/TextButton_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 103,
+			"backtrace" : 100,
+			"path" : "qml/customcomponents/ActiveTasksComponent.qml",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 101,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ActiveTasksComponent_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 105,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
 			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qrc_appTodoProject_raw_qml_0.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 105,
+			"backtrace" : 107,
 			"path" : "build/Qt_6_5_3_for_macOS-Debug/TodoProject/qmldir",
 			"sourceGroupIndex" : 2
 		},
@@ -1383,7 +1411,13 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/CancelButton_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/TextButton_qml.cpp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ActiveTasksComponent_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{

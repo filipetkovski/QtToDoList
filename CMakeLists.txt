@@ -30,6 +30,7 @@ qt_add_qml_module(appTodoProject
         qml/customcomponents/ConfirmButton.qml
         qml/screens/EditListScreen.qml
         qml/customcomponents/TextButton.qml
+        qml/customcomponents/ActiveTasksComponent.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

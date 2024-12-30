@@ -1085,6 +1085,7 @@
 	"MOC_SKIP" : 
 	[
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/Main_qml.cpp",
+		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ActiveTasksComponent_qml.cpp",
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ConfirmButton_qml.cpp",
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/Header_qml.cpp",
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/InputField_qml.cpp",
@@ -1144,6 +1145,7 @@
 	"UIC_SKIP" : 
 	[
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/Main_qml.cpp",
+		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ActiveTasksComponent_qml.cpp",
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ConfirmButton_qml.cpp",
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/Header_qml.cpp",
 		"/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/InputField_qml.cpp",

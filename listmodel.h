@@ -21,6 +21,7 @@ public:
     ListModel(const QString &name, QObject *parent = nullptr);
     Q_INVOKABLE void addTask(const QString& name);
     Q_INVOKABLE void changeStatus(int index, bool isChecked);
+    Q_INVOKABLE void reorderTasks(int index1, int index2);
 
 
     QString getName() const;

@@ -7,3 +7,4 @@
 /qt/qml/TodoProject/qml/customcomponents/ConfirmButton.qml
 /qt/qml/TodoProject/qml/screens/EditListScreen.qml
 /qt/qml/TodoProject/qml/customcomponents/TextButton.qml
+/qt/qml/TodoProject/qml/customcomponents/ActiveTasksComponent.qml

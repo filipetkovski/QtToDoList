@@ -10,4 +10,5 @@ InputField 1.0 qml/customcomponents/InputField.qml
 ConfirmButton 1.0 qml/customcomponents/ConfirmButton.qml
 EditListScreen 1.0 qml/screens/EditListScreen.qml
 TextButton 1.0 qml/customcomponents/TextButton.qml
+ActiveTasksComponent 1.0 qml/customcomponents/ActiveTasksComponent.qml
 
