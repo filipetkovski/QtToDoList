@@ -9,12 +9,6 @@ ToDoModel::ToDoModel(QObject *parent) : QAbstractListModel(parent)
     addList("Task 4");
     addList("Task 5");
     addList("Task 6");
-    addList("Task 7");
-    addList("Task 8");
-    addList("Task 9");
-    addList("Task 10");
-    addList("Task 11");
-    addList("Task 12");
 
     todo_lists[0]->addTask("Make the bed 1");
     todo_lists[0]->addTask("Make the bed 2");

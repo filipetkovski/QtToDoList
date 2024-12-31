@@ -52,7 +52,7 @@ Rectangle {
                 anchors.fill: listEditId
                 cursorShape: Qt.PointingHandCursor
 
-                onClicked: windowStackView.push("EditListScreen.qml", {"modelIndex": idList})
+                onClicked: windowStackView.push("EditListScreen.qml",{"modelIndex": idList})
             }
         }
 
@@ -83,6 +83,15 @@ Rectangle {
         color: "black"
     }
 
+    //ToDo List Description
+    Text {
+        id: listDescriptionId
+        text: listFilterModelId.sourceModel.description
+        font.pixelSize: 18
+        anchors.top: listNameId.bottom
+        color: "gray"
+    }
+
     DelegateModel {
         id: visualModel
 
@@ -95,7 +104,7 @@ Rectangle {
         id: tasksViewId
         width: rec.width
         height: contentHeight < 500 ? contentHeight : 500
-        anchors { top: listNameId.bottom; topMargin: 5 }
+        anchors { top: listDescriptionId.bottom; topMargin: 10 }
 
         model: visualModel
 
@@ -117,13 +126,13 @@ Rectangle {
     Rectangle {
         id: addTaskInputId
         height: 170
-        anchors { top: tasksViewId.bottom; topMargin: 15; }
+        anchors { top: tasksViewId.bottom; topMargin: 0; }
 
         InputField {
             id: inputTDListScreenId
             width: rec.width
             height: 100
-            titleSize: 14
+            textTitle: ""
             inputTxtSize: 14
         }
 

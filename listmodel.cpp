@@ -101,3 +101,32 @@ void ListModel::reorderTasks(int index1, int index2)
         endMoveRows();
     }
 }
+
+void ListModel::editTasks(const QString& name, const QString& description, int indX)
+{
+    if(name != "")
+        setName(name);
+
+    if(description != "")
+        setDescription(description);
+
+    emit dataChanged(index(indX),index(indX));
+}
+
+void ListModel::updateEditTasks(int taskIndex, const QString &newText)
+{
+    if(taskIndex >= 0 && taskIndex < tasks_list.size()) {
+        tasks_list[taskIndex].name = newText;
+        emit dataChanged(index(taskIndex),index(taskIndex));
+    }
+}
+
+void ListModel::deleteTask(int taskIndex)
+{
+    if(taskIndex >= 0 && taskIndex < tasks_list.size()) {
+        beginRemoveRows(QModelIndex(), taskIndex,taskIndex);
+        tasks_list.removeAt(taskIndex);
+        endRemoveRows();
+        emit dataChanged(index(taskIndex),index(taskIndex));
+    }
+}

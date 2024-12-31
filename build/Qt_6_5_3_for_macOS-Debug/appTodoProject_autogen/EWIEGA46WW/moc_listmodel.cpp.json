@@ -43,6 +43,51 @@
                     ],
                     "name": "reorderTasks",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "description",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "indX",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "editTasks",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "taskIndex",
+                            "type": "int"
+                        },
+                        {
+                            "name": "newText",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "updateEditTasks",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "taskIndex",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "deleteTask",
+                    "returnType": "void"
                 }
             ],
             "object": true,

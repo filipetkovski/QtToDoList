@@ -16,12 +16,16 @@ class ListModel : public QAbstractListModel
 public:
     enum Roles {
         RoleName = Qt::ItemDataRole::UserRole,
-        RoleIsDone
+        RoleIsDone,
     };
+
     ListModel(const QString &name, QObject *parent = nullptr);
     Q_INVOKABLE void addTask(const QString& name);
     Q_INVOKABLE void changeStatus(int index, bool isChecked);
     Q_INVOKABLE void reorderTasks(int index1, int index2);
+    Q_INVOKABLE void editTasks(const QString& name, const QString& description, int indX);
+    Q_INVOKABLE void updateEditTasks(int taskIndex, const QString& newText);
+    Q_INVOKABLE void deleteTask(int taskIndex);
 
 
     QString getName() const;
@@ -44,7 +48,7 @@ signals:
 private:
     QString name;
     QString description;
-    QList<TaskModel> tasks_list;
+    QList<TaskModel> tasks_list;   
 };
 
 #endif // LISTMODEL_H
