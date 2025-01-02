@@ -19,28 +19,24 @@ Window {
         id: toDoModelId
     }
 
-    ToDoFilterModel
-    {
+    ToDoFilterModel {
         id: toDoFilterModelId
         sourceModel: toDoModelId
         mShowActive: true
     }
 
-    ToDoFilterModel
-    {
+    ToDoFilterModel {
         id: completedToDoFilterModel
         sourceModel: toDoModelId
         mShowActive: false
     }
 
-    ListFilterModel
-    {
+    ListFilterModel {
         id: listFilterModelId
         mShowActive: true
     }
 
-    ListFilterModel
-    {
+    ListFilterModel {
         id: listDoneFilterModelId
         mShowActive: false
     }
@@ -49,24 +45,21 @@ Window {
         id: rec
         width: 800
         height: applicationWindow.height - 50
+        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter; topMargin: 50; }
         color: "white"
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.topMargin: 50
 
         StackView {
             id: windowStackView
-
             anchors.fill: rec
-
-            pushEnter: Transition { XAnimator { duration: 0 } }
-            pushExit: Transition { XAnimator { duration: 0 } }
-            popEnter: Transition { XAnimator { duration: 0 } }
-            popExit: Transition { XAnimator { duration: 0 } }
-            replaceEnter: Transition { XAnimator { duration: 0 } }
-            replaceExit: Transition { XAnimator { duration: 0 } }
-
             initialItem: "Screens/HomeScreen.qml"
+
+            pushEnter: stackTransitionId; pushExit: stackTransitionId
+            popEnter: stackTransitionId; popExit: stackTransitionId
+
+            Transition {
+                id: stackTransitionId
+                XAnimator { duration: 0 }
+            }
         }
     }
 }

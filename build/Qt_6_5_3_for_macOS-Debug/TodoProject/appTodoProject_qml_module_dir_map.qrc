@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/TodoProject">/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/TodoProject</file>
+
+  </qresource>
+</RCC>

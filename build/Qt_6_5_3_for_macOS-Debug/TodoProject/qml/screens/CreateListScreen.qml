@@ -3,20 +3,19 @@ import QtQuick
 import "../CustomComponents"
 
 FocusScope {
-    id: createNewListScreen
+
     Header {
         id: headerCreateScreenId
         width: 300
+
         Text {
-            id: headerTxtBackLogoId
             text: qsTr("My List")
             color: "blue"
             font { pixelSize: 20; bold: true; underline: true; }
             anchors { verticalCenter: parent.verticalCenter; left: parent.left; leftMargin: 90 }
 
             MouseArea {
-                id: clickTxtBackLogoId
-                anchors.fill: headerTxtBackLogoId
+                anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
 
                 onClicked: windowStackView.pop()
@@ -35,6 +34,7 @@ FocusScope {
 
     Rectangle {
         anchors { top: inputCreateScreenId.bottom; topMargin: 20 }
+
         ConfirmButton {
             id: confirmCreateScreenId
             width: 120

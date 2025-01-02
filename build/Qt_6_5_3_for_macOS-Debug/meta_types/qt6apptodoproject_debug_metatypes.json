@@ -73,7 +73,7 @@
                         "access": "public",
                         "arguments": [
                             {
-                                "name": "index",
+                                "name": "taskIndex",
                                 "type": "int"
                             },
                             {

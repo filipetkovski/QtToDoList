@@ -1,0 +1,14 @@
+-rootPath
+/Users/filip.petkovski/Desktop/TodoProject
+-cmake-output
+-output-file
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appTodoProject.cmake
+-importPath
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/TodoProject
+-importPath
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug
+-importPath
+/Users/filip.petkovski/Qt/6.5.3/macos/./qml
+-qrcFiles
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/qmake_TodoProject.qrc
+/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/.rcc/appTodoProject_raw_qml_0.qrc

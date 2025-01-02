@@ -4,7 +4,6 @@ import QtQuick.Layouts
 import "../CustomComponents"
 
 FocusScope {
-    id: createNewListScreen
     property int modelIndex: -1
 
     onModelIndexChanged: {
@@ -59,9 +58,7 @@ FocusScope {
             reuseItems: false
 
             model: listFilterModelId
-
             spacing: 1
-
             delegate: InputField {
                 id: editTaskId
                 textTitle: qsTr("")
@@ -72,7 +69,6 @@ FocusScope {
                 inputTxtSize: 15
 
                 ConfirmButton {
-                    id: deleteTaskId
                     anchors { left: inputFieldId.right; leftMargin: 5; verticalCenter: inputFieldId.verticalCenter; }
                     text: qsTr("X")
                     fontSize: 10
@@ -110,7 +106,7 @@ FocusScope {
         height: 35
 
         onBtnClicked: {
-            //Edit task inputs
+            // Edit task inputs
             if(listFilterModelId.sourceModel !== null) {
                 for (var i = 0; i < editTasksViewId.contentItem.children.length-1; i++) {
                     var taskDelegate = editTasksViewId.contentItem.children[i];
@@ -121,9 +117,10 @@ FocusScope {
                 }
             }
 
+            // Edit task title and description
             listFilterModelId.sourceModel.editTitleAndDescription(editTitleId.text, editDescId.text, modelIndex)
 
-            //Delete the tasks
+            // Delete the selected tasks
             for(var j=editTasksViewId.tasksToBeDeleted.length-1;j>=0;j--)
                 listFilterModelId.sourceModel.deleteTask(listFilterModelId.sourceIndex(editTasksViewId.tasksToBeDeleted[j]))
 
@@ -132,7 +129,6 @@ FocusScope {
     }
 
     TextButton {
-        id: cancelBt2nEditId
         anchors { left: confirmEditId.right; leftMargin: 15; verticalCenter: confirmEditId.verticalCenter; }
         onBtnClicked: windowStackView.pop()
     }

@@ -7,12 +7,11 @@ import ToDoModel 1.0
 import "../CustomComponents"
 
 Rectangle {
-    id: homeScreen
 
     Header {
         id: headerHomeScreenId
-        //FIX THE TASK WITH THE WIDTH OF THE HEADER
         width: 350
+
         Text {
             id: listTxt
             text: qsTr("My List")
@@ -22,15 +21,13 @@ Rectangle {
         }
 
         Text {
-            id: createNewListTxt
             text: qsTr("Create a new list")
             color: "red"
             font { pixelSize: 15; underline: true; bold: true }
             anchors { baseline: listTxt.baseline; left: listTxt.right; leftMargin: 10 }
 
             MouseArea {
-                id: mouseNewList
-                anchors.fill: createNewListTxt
+                anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
 
                 onClicked: windowStackView.push("CreateListScreen.qml")
@@ -46,14 +43,11 @@ Rectangle {
 
         model: toDoFilterModelId
         spacing: 1
-
         delegate: RowLayout {
-            id: delRec
-
             height: 30
+
             //Task Dot
             Rectangle {
-                id: dotRec
                 width: 30
 
                 Rectangle {
@@ -63,7 +57,7 @@ Rectangle {
                     height: (tasks_left + 3) * 1.2
                     color: "gray"
                     radius: ((tasks_left + 3) * 1.2) / 2
-                    anchors.centerIn: dotRec
+                    anchors.centerIn: parent
                     Layout.leftMargin: 3
                 }
             }
@@ -76,7 +70,6 @@ Rectangle {
                 font { underline: true; bold:true; pixelSize: 20 }
 
                 MouseArea {
-                    id: mouseListName
                     anchors.fill: listActiveNameId
                     cursorShape: Qt.PointingHandCursor
 
@@ -95,7 +88,6 @@ Rectangle {
     }
 
     Flow {
-        id: completedListView
         width: rec.width
         height: 100
         anchors { top: listView.bottom; topMargin: 20 }
@@ -112,8 +104,7 @@ Rectangle {
             id: inActiveRepeater
             model: completedToDoFilterModel
 
-            delegate: Text
-            {
+            delegate: Text {
                 id: listInActiveNameId
                 text: RoleInactiveListName
                 color: "blue"

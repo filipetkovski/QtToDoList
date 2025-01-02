@@ -15,14 +15,12 @@ ToDoModel::~ToDoModel()
 void ToDoModel::addList(const QString &name)
 {
     beginInsertRows(QModelIndex(), mTodoLists.size(),mTodoLists.size());
-
     ListModel *listModel = new ListModel(name);
     mTodoLists.append(listModel);
     connect(listModel,&ListModel::dataChanged,this,[this,listModel](){
-        int idX = mTodoLists.indexOf(listModel);
-        emit dataChanged(index(idX),index(idX));
+        int taskIndex = mTodoLists.indexOf(listModel);
+        emit dataChanged(index(taskIndex),index(taskIndex));
     });
-
     endInsertRows();
 }
 
@@ -60,20 +58,19 @@ QVariant ToDoModel::data(const QModelIndex &index, int role) const
     const ListModel &list = *mTodoLists[index.row()];
     int tasksLeft = list.getTasksLeft();
     int tasksSize = list.getListSize();
-
     switch (role)
     {
         case RoleActiveListName: return tasksLeft > 0 || tasksSize == 0 ? list.getTitle() : QVariant();
         case RoleInactiveListName: return tasksLeft == 0 && tasksSize > 0 ? list.getTitle() : QVariant();
         case RoleTasksLeft: return tasksLeft > 0 || tasksSize == 0 ? tasksLeft : QVariant();
     }
-
     return QVariant();
 }
 
 QHash<int, QByteArray> ToDoModel::roleNames() const
 {
-    return {
+    return
+    {
         {RoleActiveListName, "RoleActiveListName"},
         {RoleInactiveListName, "RoleInactiveListName"},
         {RoleTasksLeft, "RoleTasksLeft"}

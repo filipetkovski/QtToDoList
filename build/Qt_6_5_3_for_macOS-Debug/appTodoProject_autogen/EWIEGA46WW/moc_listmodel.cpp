@@ -45,14 +45,13 @@ static constexpr auto qt_meta_stringdata_CLASSListModelENDCLASS = QtMocHelpers::
     "addTask",
     "title",
     "changeTaskStatus",
-    "index",
+    "taskIndex",
     "isChecked",
     "reorderTasks",
     "fromIndex",
     "toIndex",
     "editTitleAndDescription",
     "description",
-    "taskIndex",
     "updateEditTasks",
     "newText",
     "deleteTask",
@@ -61,7 +60,7 @@ static constexpr auto qt_meta_stringdata_CLASSListModelENDCLASS = QtMocHelpers::
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSListModelENDCLASS_t {
-    uint offsetsAndSizes[40];
+    uint offsetsAndSizes[38];
     char stringdata0[10];
     char stringdata1[13];
     char stringdata2[1];
@@ -69,19 +68,18 @@ struct qt_meta_stringdata_CLASSListModelENDCLASS_t {
     char stringdata4[8];
     char stringdata5[6];
     char stringdata6[17];
-    char stringdata7[6];
+    char stringdata7[10];
     char stringdata8[10];
     char stringdata9[13];
     char stringdata10[10];
     char stringdata11[8];
     char stringdata12[24];
     char stringdata13[12];
-    char stringdata14[10];
-    char stringdata15[16];
-    char stringdata16[8];
-    char stringdata17[11];
-    char stringdata18[7];
-    char stringdata19[13];
+    char stringdata14[16];
+    char stringdata15[8];
+    char stringdata16[11];
+    char stringdata17[7];
+    char stringdata18[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSListModelENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -94,19 +92,18 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSListModelENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(43, 7),  // "addTask"
         QT_MOC_LITERAL(51, 5),  // "title"
         QT_MOC_LITERAL(57, 16),  // "changeTaskStatus"
-        QT_MOC_LITERAL(74, 5),  // "index"
-        QT_MOC_LITERAL(80, 9),  // "isChecked"
-        QT_MOC_LITERAL(90, 12),  // "reorderTasks"
-        QT_MOC_LITERAL(103, 9),  // "fromIndex"
-        QT_MOC_LITERAL(113, 7),  // "toIndex"
-        QT_MOC_LITERAL(121, 23),  // "editTitleAndDescription"
-        QT_MOC_LITERAL(145, 11),  // "description"
-        QT_MOC_LITERAL(157, 9),  // "taskIndex"
-        QT_MOC_LITERAL(167, 15),  // "updateEditTasks"
-        QT_MOC_LITERAL(183, 7),  // "newText"
-        QT_MOC_LITERAL(191, 10),  // "deleteTask"
-        QT_MOC_LITERAL(202, 6),  // "mTitle"
-        QT_MOC_LITERAL(209, 12)   // "mDescription"
+        QT_MOC_LITERAL(74, 9),  // "taskIndex"
+        QT_MOC_LITERAL(84, 9),  // "isChecked"
+        QT_MOC_LITERAL(94, 12),  // "reorderTasks"
+        QT_MOC_LITERAL(107, 9),  // "fromIndex"
+        QT_MOC_LITERAL(117, 7),  // "toIndex"
+        QT_MOC_LITERAL(125, 23),  // "editTitleAndDescription"
+        QT_MOC_LITERAL(149, 11),  // "description"
+        QT_MOC_LITERAL(161, 15),  // "updateEditTasks"
+        QT_MOC_LITERAL(177, 7),  // "newText"
+        QT_MOC_LITERAL(185, 10),  // "deleteTask"
+        QT_MOC_LITERAL(196, 6),  // "mTitle"
+        QT_MOC_LITERAL(203, 12)   // "mDescription"
     },
     "ListModel",
     "titleChanged",
@@ -115,14 +112,13 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSListModelENDCLASS_t qt_meta_str
     "addTask",
     "title",
     "changeTaskStatus",
-    "index",
+    "taskIndex",
     "isChecked",
     "reorderTasks",
     "fromIndex",
     "toIndex",
     "editTitleAndDescription",
     "description",
-    "taskIndex",
     "updateEditTasks",
     "newText",
     "deleteTask",
@@ -155,8 +151,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListModelENDCLASS[] = {
        6,    2,   67,    2, 0x02,    7 /* Public */,
        9,    2,   72,    2, 0x02,   10 /* Public */,
       12,    3,   77,    2, 0x02,   13 /* Public */,
-      15,    2,   84,    2, 0x02,   17 /* Public */,
-      17,    1,   89,    2, 0x02,   20 /* Public */,
+      14,    2,   84,    2, 0x02,   17 /* Public */,
+      16,    1,   89,    2, 0x02,   20 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -166,13 +162,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListModelENDCLASS[] = {
     QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,    7,    8,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   10,   11,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Int,    5,   13,   14,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   14,   16,
-    QMetaType::Void, QMetaType::Int,   14,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Int,    5,   13,    7,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,    7,   15,
+    QMetaType::Void, QMetaType::Int,    7,
 
  // properties: name, type, flags
-      18, QMetaType::QString, 0x00015803, uint(0), 0,
-      19, QMetaType::QString, 0x00015803, uint(1), 0,
+      17, QMetaType::QString, 0x00015803, uint(0), 0,
+      18, QMetaType::QString, 0x00015803, uint(1), 0,
 
        0        // eod
 };

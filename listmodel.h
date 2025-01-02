@@ -8,21 +8,20 @@
 
 class ListModel : public QAbstractListModel
 {
-
     Q_OBJECT
     Q_PROPERTY(QString mTitle READ getTitle WRITE setTitle NOTIFY titleChanged FINAL)
     Q_PROPERTY(QString mDescription READ getDescription WRITE setDescription NOTIFY descriptionChanged FINAL)
 
 public:
-    enum Roles {
+    enum Roles
+    {
         RoleTaskName = Qt::ItemDataRole::UserRole,
         RoleIsDone,
     };
-
     ListModel(const QString &name, QObject *parent = nullptr);
 
     Q_INVOKABLE void addTask(const QString& title);
-    Q_INVOKABLE void changeTaskStatus(int index, bool isChecked);
+    Q_INVOKABLE void changeTaskStatus(int taskIndex, bool isChecked);
     Q_INVOKABLE void reorderTasks(int fromIndex, int toIndex);
     Q_INVOKABLE void editTitleAndDescription(const QString& title, const QString& description, int taskIndex);
     Q_INVOKABLE void updateEditTasks(int taskIndex, const QString& newText);

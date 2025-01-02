@@ -57,13 +57,11 @@ int ListModel::rowCount(const QModelIndex &parent) const
 QVariant ListModel::data(const QModelIndex &index, int role) const
 {
     const TaskModel& task = mTasksList[index.row()];
-
     switch (role)
     {
         case RoleTaskName: return task.name;
         case RoleIsDone: return task.isDone;
     }
-
     return QVariant();
 }
 

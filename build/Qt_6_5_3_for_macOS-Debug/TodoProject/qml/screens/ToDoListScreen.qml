@@ -10,20 +10,44 @@ Rectangle {
     id: toDoListScreen
     property int idList: -1
     property bool dragTxtVisible: false
+    property QtObject objList: toDoModelId.getListModel(idList)
 
     signal resetDragTxtVisible
 
     onResetDragTxtVisible: dragTxtVisible = false
 
     onIdListChanged: {
-        var objList = toDoModelId.getListModel(idList)
         listFilterModelId.sourceModel = objList
         listDoneFilterModelId.sourceModel = objList
     }
 
+    states: [
+        State {
+            name: "addTxtVisible"
+            PropertyChanges { target: addTaskTxtId; visible: true }
+            PropertyChanges { target: addTaskInputId; visible: false }
+            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskTxtId.bottom }
+        },
+        State {
+            name: "addInputVisible"
+            PropertyChanges { target: addTaskTxtId; visible: false }
+            PropertyChanges { target: addTaskInputId; visible: true }
+            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskInputId.bottom }
+        },
+        State {
+            name: "nothingVisible"
+            PropertyChanges { target: addTaskTxtId; visible: false }
+            PropertyChanges { target: addTaskInputId; visible: false }
+            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskInputId.bottom }
+        }
+    ]
+
+    state: dragTxtVisible ? "nothingVisible" : "addTxtVisible"
+
     Header {
         id: headerTDListScreenId
         width: tasksViewId.count <= 1 ? 230 : 320
+
         Text {
             id: headerBackTxtTDScreenId
             text: qsTr("My List")
@@ -32,8 +56,7 @@ Rectangle {
             anchors { verticalCenter: parent.verticalCenter; left: parent.left; leftMargin: 90 }
 
             MouseArea {
-                id: clickLogoTxtTDScreenId
-                anchors.fill: headerBackTxtTDScreenId
+                anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
 
                 onClicked: windowStackView.pop()
@@ -48,7 +71,6 @@ Rectangle {
             anchors { verticalCenter: parent.verticalCenter; left: headerBackTxtTDScreenId.left; leftMargin: 80 }
 
             MouseArea {
-                id: clickTxtEditId
                 anchors.fill: listEditId
                 cursorShape: Qt.PointingHandCursor
 
@@ -65,7 +87,6 @@ Rectangle {
             visible: tasksViewId.count <= 1 ? false : true
 
             MouseArea {
-                id: clickTxtReorderId
                 anchors.fill: listReorderId
                 cursorShape: Qt.PointingHandCursor
 
@@ -107,7 +128,6 @@ Rectangle {
         anchors { top: listDescriptionId.bottom; topMargin: 10 }
 
         model: visualModel
-
         spacing: 1
         cacheBuffer: 50
     }
@@ -117,6 +137,7 @@ Rectangle {
         id: addTaskTxtId
         anchors { top: tasksViewId.bottom; topMargin: 15; }
         text: qsTr("Add another task")
+
         onBtnClicked: toDoListScreen.state = "addInputVisible"
     }
 
@@ -145,12 +166,13 @@ Rectangle {
             anchors { top: inputTDListScreenId.bottom; topMargin: 20 }
             text: qsTr("+ Add this task")
 
-            onBtnClicked: {
-                if(inputTDListScreenId.text != "") {
-                    listFilterModelId.sourceModel.addTask(inputTDListScreenId.text)
-                    inputTDListScreenId.text = ""
-                }
-            }
+            onBtnClicked: inputTDListScreenId.text !== "" ? listFilterModelId.sourceModel.addTask(inputTDListScreenId.text) : inputTDListScreenId.text = ""
+            // {
+            //     if(inputTDListScreenId.text !== "") {
+            //         listFilterModelId.sourceModel.addTask(inputTDListScreenId.text)
+            //         inputTDListScreenId.text = ""
+            //     }
+            // }
         }
 
         TextButton {
@@ -165,53 +187,27 @@ Rectangle {
         width: rec.width
         height: contentHeight < 500 ? contentHeight : 500
         anchors.topMargin: 15
-        model: listDoneFilterModelId
-
         visible: !dragTxtVisible
 
+        model: listDoneFilterModelId
         spacing: 1
+        delegate: RowLayout {
+            height: 30
 
-        delegate:
-            RowLayout {
-                height: 30
+            //CheckBox
+            CheckBox {
+                checked: RoleIsDone
 
-                //CheckBox------------------
-                CheckBox {
-                    checked: RoleIsDone
-
-                    //Task Name
-                    Text {
-                        text: RoleTaskName
-                        anchors { left: parent.right; leftMargin: 5; }
-                        color: "gray"
-                        font.pixelSize: 13
-                    }
-
-                    onCheckedChanged: listDoneFilterModelId.sourceModel.changeTaskStatus(listDoneFilterModelId.sourceIndex(index), checked)
+                //Task Name
+                Text {
+                    text: RoleTaskName
+                    anchors { left: parent.right; leftMargin: 5; }
+                    color: "gray"
+                    font.pixelSize: 13
                 }
+
+                onCheckedChanged: listDoneFilterModelId.sourceModel.changeTaskStatus(listDoneFilterModelId.sourceIndex(index), checked)
             }
-    }
-
-    states: [
-        State {
-            name: "addTxtVisible"
-            PropertyChanges { target: addTaskTxtId; visible: true }
-            PropertyChanges { target: addTaskInputId; visible: false }
-            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskTxtId.bottom }
-        },
-        State {
-            name: "addInputVisible"
-            PropertyChanges { target: addTaskTxtId; visible: false }
-            PropertyChanges { target: addTaskInputId; visible: true }
-            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskInputId.bottom }
-        },
-        State {
-            name: "nothingVisible"
-            PropertyChanges { target: addTaskTxtId; visible: false }
-            PropertyChanges { target: addTaskInputId; visible: false }
-            AnchorChanges { target: tasksDoneViewId; anchors.top: addTaskInputId.bottom }
         }
-    ]
-
-    state: dragTxtVisible ? "nothingVisible" : "addTxtVisible"
+    }
 }
