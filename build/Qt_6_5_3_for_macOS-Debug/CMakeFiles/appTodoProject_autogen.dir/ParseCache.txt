@@ -428,7 +428,6 @@
  mdp:/Users/filip.petkovski/Qt/6.5.3/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h
  mdp:/Users/filip.petkovski/Qt/6.5.3/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h
 /Users/filip.petkovski/Desktop/TodoProject/listmodel.cpp
-/Users/filip.petkovski/Desktop/TodoProject/todomodel.cpp
 /Users/filip.petkovski/Desktop/TodoProject/listmodel.h
  mmc:Q_OBJECT
  mdp:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h
@@ -639,6 +638,7 @@
  mdp:/Users/filip.petkovski/Qt/6.5.3/macos/lib/QtCore.framework/Versions/A/Headers/qvarlengtharray.h
  mdp:/Users/filip.petkovski/Qt/6.5.3/macos/lib/QtCore.framework/Versions/A/Headers/qversiontagging.h
  mdp:/Users/filip.petkovski/Qt/6.5.3/macos/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h
+/Users/filip.petkovski/Desktop/TodoProject/todomodel.cpp
 /Users/filip.petkovski/Desktop/TodoProject/listfiltermodel.h
  mmc:Q_OBJECT
  mdp:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h

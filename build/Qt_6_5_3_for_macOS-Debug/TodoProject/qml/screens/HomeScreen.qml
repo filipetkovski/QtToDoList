@@ -35,6 +35,7 @@ Rectangle {
         }
     }
 
+    // Render Active Tasks
     ListView {
         id: listView
         width: rec.width
@@ -46,7 +47,7 @@ Rectangle {
         delegate: RowLayout {
             height: 30
 
-            //Task Dot
+            // Task Dot
             Rectangle {
                 width: 30
 
@@ -62,7 +63,7 @@ Rectangle {
                 }
             }
 
-            //Task Name
+            // Task Name
             Text {
                 id: listActiveNameId
                 text: RoleActiveListName
@@ -77,7 +78,7 @@ Rectangle {
                 }
             }
 
-            //Tasks Left
+            // Tasks Left
             Text {
                 visible: RoleTasksLeft > 0
                 text: "- " + RoleTasksLeft + " left"
@@ -87,6 +88,7 @@ Rectangle {
         }
     }
 
+    // Render Inactive Tasks
     Flow {
         width: rec.width
         height: 100

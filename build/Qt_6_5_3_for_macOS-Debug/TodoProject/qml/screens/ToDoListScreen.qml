@@ -95,7 +95,7 @@ Rectangle {
         }
     }
 
-    //ToDo List Name
+    // ToDo List Name
     Text {
         id: listNameId
         text: listFilterModelId.sourceModel.mTitle
@@ -104,7 +104,7 @@ Rectangle {
         color: "black"
     }
 
-    //ToDo List Description
+    // ToDo List Description
     Text {
         id: listDescriptionId
         text: listFilterModelId.sourceModel.mDescription
@@ -120,7 +120,7 @@ Rectangle {
         delegate: ActiveTasksComponent {}
     }
 
-    //Active Tasks
+    // Render Active Tasks
     ListView {
         id: tasksViewId
         width: rec.width
@@ -132,7 +132,7 @@ Rectangle {
         cacheBuffer: 50
     }
 
-    //Add another task-------------------
+    // Show add text
     TextButton {
         id: addTaskTxtId
         anchors { top: tasksViewId.bottom; topMargin: 15; }
@@ -141,9 +141,9 @@ Rectangle {
         onBtnClicked: toDoListScreen.state = "addInputVisible"
     }
 
-    //OR
+    // OR
 
-    //Add Input
+    // Show add input
     Rectangle {
         id: addTaskInputId
         height: 170
@@ -166,13 +166,12 @@ Rectangle {
             anchors { top: inputTDListScreenId.bottom; topMargin: 20 }
             text: qsTr("+ Add this task")
 
-            onBtnClicked: inputTDListScreenId.text !== "" ? listFilterModelId.sourceModel.addTask(inputTDListScreenId.text) : inputTDListScreenId.text = ""
-            // {
-            //     if(inputTDListScreenId.text !== "") {
-            //         listFilterModelId.sourceModel.addTask(inputTDListScreenId.text)
-            //         inputTDListScreenId.text = ""
-            //     }
-            // }
+            onBtnClicked: {
+                if(inputTDListScreenId.text !== "") {
+                    listFilterModelId.sourceModel.addTask(inputTDListScreenId.text)
+                    inputTDListScreenId.text = ""
+                }
+            }
         }
 
         TextButton {
@@ -181,7 +180,7 @@ Rectangle {
         }
     }
 
-    //Done Tasks
+    // REnder Done Tasks
     ListView {
         id: tasksDoneViewId
         width: rec.width
