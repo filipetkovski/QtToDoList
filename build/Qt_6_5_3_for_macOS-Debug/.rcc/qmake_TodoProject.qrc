@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/qt/qml/TodoProject">
-    <file alias="qmldir">/Users/filip.petkovski/Desktop/TodoProject/build/Qt_6_5_3_for_macOS-Debug/TodoProject/qmldir</file>
-  </qresource>
-</RCC>
-
