@@ -21,16 +21,16 @@ qt_add_qml_module(appTodoProject
     URI TodoProject
     VERSION 1.0
     QML_FILES
-        qml/Main.qml
-        qml/customcomponents/Header.qml
-        qml/screens/ToDoListScreen.qml
-        qml/screens/HomeScreen.qml
-        qml/screens/CreateListScreen.qml
-        qml/customcomponents/InputField.qml
-        qml/customcomponents/ConfirmButton.qml
-        qml/screens/EditListScreen.qml
-        qml/customcomponents/TextButton.qml
-        qml/customcomponents/ActiveTasksComponent.qml
+        Qml/Main.qml
+        Qml/CustomComponents/Header.qml
+        Qml/Screens/ToDoListScreen.qml
+        Qml/Screens/HomeScreen.qml
+        Qml/Screens/CreateListScreen.qml
+        Qml/CustomComponents/InputField.qml
+        Qml/CustomComponents/ConfirmButton.qml
+        Qml/Screens/EditListScreen.qml
+        Qml/CustomComponents/TextButton.qml
+        Qml/CustomComponents/ActiveTasksComponent.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

@@ -43,7 +43,7 @@ static constexpr auto qt_meta_stringdata_CLASSListFilterModelENDCLASS = QtMocHel
     "",
     "sourceIndex",
     "indX",
-    "showActive"
+    "mShowActive"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSListFilterModelENDCLASS_t {
@@ -53,7 +53,7 @@ struct qt_meta_stringdata_CLASSListFilterModelENDCLASS_t {
     char stringdata2[1];
     char stringdata3[12];
     char stringdata4[5];
-    char stringdata5[11];
+    char stringdata5[12];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSListFilterModelENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -64,14 +64,14 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSListFilterModelENDCLASS_t qt_me
         QT_MOC_LITERAL(34, 0),  // ""
         QT_MOC_LITERAL(35, 11),  // "sourceIndex"
         QT_MOC_LITERAL(47, 4),  // "indX"
-        QT_MOC_LITERAL(52, 10)   // "showActive"
+        QT_MOC_LITERAL(52, 11)   // "mShowActive"
     },
     "ListFilterModel",
     "showActiveChanged",
     "",
     "sourceIndex",
     "indX",
-    "showActive"
+    "mShowActive"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -103,7 +103,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListFilterModelENDCLASS[] = {
     QMetaType::Int, QMetaType::Int,    4,
 
  // properties: name, type, flags
-       5, QMetaType::Bool, 0x00015103, uint(0), 0,
+       5, QMetaType::Bool, 0x00015003, uint(0), 0,
 
        0        // eod
 };
@@ -115,7 +115,7 @@ Q_CONSTINIT const QMetaObject ListFilterModel::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSListFilterModelENDCLASS_t,
-        // property 'showActive'
+        // property 'mShowActive'
         QtPrivate::TypeAndForceComplete<bool, std::true_type>,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<ListFilterModel, std::true_type>,

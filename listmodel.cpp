@@ -1,47 +1,49 @@
 #include "listmodel.h"
+
 #include "taskmodel.h"
 
-ListModel::ListModel(const QString &name, QObject *parent) : QAbstractListModel(parent),
-    name(name)
+ListModel::ListModel(const QString &title, QObject *parent) : QAbstractListModel(parent),
+    mTitle(title)
 {
 }
 
-QString ListModel::getName() const
+QString ListModel::getTitle() const
 {
-    return name;
+    return mTitle;
 }
 
-void ListModel::setName(const QString &newName)
+void ListModel::setTitle(const QString &newTitle)
 {
-    if (name == newName)
+    if (mTitle == newTitle)
         return;
-    name = newName;
-    emit nameChanged();
+    mTitle = newTitle;
+    emit titleChanged();
 }
 
 QString ListModel::getDescription() const
 {
-    return description;
+    return mDescription;
 }
 
 int ListModel::getListSize() const
 {
-    return tasks_list.size();
+    return mTasksList.size();
 }
 
 void ListModel::setDescription(const QString &newDescription)
 {
-    if (description == newDescription)
+    if (mDescription == newDescription)
         return;
-    description = newDescription;
+    mDescription = newDescription;
     emit descriptionChanged();
 }
 
 int ListModel::getTasksLeft() const
 {
     int count = 0;
-    for(TaskModel task: tasks_list) {
-        if(!task.is_done)
+    for(TaskModel task: mTasksList)
+    {
+        if(!task.isDone)
             count++;
     }
     return count;
@@ -49,17 +51,17 @@ int ListModel::getTasksLeft() const
 
 int ListModel::rowCount(const QModelIndex &parent) const
 {
-    return tasks_list.size();
+    return mTasksList.size();
 }
 
 QVariant ListModel::data(const QModelIndex &index, int role) const
 {
-    const TaskModel& task = tasks_list[index.row()];
+    const TaskModel& task = mTasksList[index.row()];
 
     switch (role)
     {
-        case RoleName: return task.name;
-        case RoleIsDone: return task.is_done;
+        case RoleTaskName: return task.name;
+        case RoleIsDone: return task.isDone;
     }
 
     return QVariant();
@@ -67,65 +69,69 @@ QVariant ListModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> ListModel::roleNames() const
 {
-    return {
-        {RoleName, "RoleName"},
+    return
+    {
+        {RoleTaskName, "RoleTaskName"},
         {RoleIsDone, "RoleIsDone"}
     };
 }
 
-void ListModel::addTask(const QString& name) {
-    beginInsertRows(QModelIndex(), tasks_list.size(), tasks_list.size());
-    TaskModel new_task;
-    new_task.name = name;
-    tasks_list.append(new_task);
-    emit dataChanged(index(tasks_list.size()),index(tasks_list.size()));
+void ListModel::addTask(const QString& title) {
+    beginInsertRows(QModelIndex(), mTasksList.size(), mTasksList.size());
+    TaskModel newTask(title);
+    mTasksList.append(newTask);
+    emit dataChanged(index(mTasksList.size()),index(mTasksList.size()));
     endInsertRows();
 }
 
-void ListModel::changeStatus(int idX, bool isChecked)
+void ListModel::changeTaskStatus(int taskIndex, bool isChecked)
 {
-    if (idX >= 0 && idX < tasks_list.size())
+    if (taskIndex >= 0 && taskIndex < mTasksList.size())
     {
-        if(tasks_list[idX].is_done != isChecked) {
-            tasks_list[idX].is_done = isChecked;
-            emit dataChanged(index(idX),index(idX));
+        if(mTasksList[taskIndex].isDone != isChecked)
+        {
+            mTasksList[taskIndex].isDone = isChecked;
+            emit dataChanged(index(taskIndex),index(taskIndex));
         }
     }
 }
 
-void ListModel::reorderTasks(int index1, int index2)
+void ListModel::reorderTasks(int fromIndex, int toIndex)
 {
-    if(index1 != index2){
-        beginMoveRows(QModelIndex(), index1, index1, QModelIndex(), index2+1);
-        tasks_list.move(index1, index2);
+    if(fromIndex != toIndex)
+    {
+        beginMoveRows(QModelIndex(), fromIndex, fromIndex, QModelIndex(), toIndex+1);
+        mTasksList.move(fromIndex, toIndex);
         endMoveRows();
     }
 }
 
-void ListModel::editTasks(const QString& name, const QString& description, int indX)
+void ListModel::editTitleAndDescription(const QString& title, const QString& description, int taskIndex)
 {
-    if(name != "")
-        setName(name);
+    if(title != "")
+        setTitle(title);
 
     if(description != "")
         setDescription(description);
 
-    emit dataChanged(index(indX),index(indX));
+    emit dataChanged(index(taskIndex),index(taskIndex));
 }
 
 void ListModel::updateEditTasks(int taskIndex, const QString &newText)
 {
-    if(taskIndex >= 0 && taskIndex < tasks_list.size()) {
-        tasks_list[taskIndex].name = newText;
+    if(taskIndex >= 0 && taskIndex < mTasksList.size())
+    {
+        mTasksList[taskIndex].name = newText;
         emit dataChanged(index(taskIndex),index(taskIndex));
     }
 }
 
 void ListModel::deleteTask(int taskIndex)
 {
-    if(taskIndex >= 0 && taskIndex < tasks_list.size()) {
+    if(taskIndex >= 0 && taskIndex < mTasksList.size())
+    {
         beginRemoveRows(QModelIndex(), taskIndex,taskIndex);
-        tasks_list.removeAt(taskIndex);
+        mTasksList.removeAt(taskIndex);
         endRemoveRows();
         emit dataChanged(index(taskIndex),index(taskIndex));
     }

@@ -1,20 +1,21 @@
 #include "todofiltermodel.h"
+
 #include "todomodel.h"
 
 ToDoFilterModel::ToDoFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent), m_showActive(true)
+    : QSortFilterProxyModel(parent), mShowActive(true)
 {
 }
 
 bool ToDoFilterModel::showActive() const
 {
-    return m_showActive;
+    return mShowActive;
 }
 
 void ToDoFilterModel::setShowActive(bool active)
 {
-    if (m_showActive != active) {
-        m_showActive = active;
+    if (mShowActive != active) {
+        mShowActive = active;
         invalidateFilter();
         emit showActiveChanged();
     }
@@ -30,5 +31,5 @@ bool ToDoFilterModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceP
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     bool isActive = sourceModel()->data(index, ToDoModel::RoleActiveListName).isValid();
-    return m_showActive ? isActive : !isActive;
+    return mShowActive ? isActive : !isActive;
 }

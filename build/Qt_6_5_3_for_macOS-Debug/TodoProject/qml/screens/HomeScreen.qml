@@ -3,7 +3,8 @@ import QtQuick.Layouts
 import QtQuick.Controls
 
 import ToDoModel 1.0
-import "../customcomponents"
+
+import "../CustomComponents"
 
 Rectangle {
     id: homeScreen

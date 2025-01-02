@@ -1,6 +1,6 @@
 import QtQuick
 
-import "../customcomponents"
+import "../CustomComponents"
 
 FocusScope {
     id: createNewListScreen
@@ -40,7 +40,7 @@ FocusScope {
             width: 120
             height: 35
             fontSize: 12
-            pushUrlLocation: "../screens/ToDoListScreen.qml"
+            pushUrlLocation: "../Screens/ToDoListScreen.qml"
             text: qsTr("Create this list")
 
             onBtnClicked: {

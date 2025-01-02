@@ -4,8 +4,10 @@
 #include <QObject>
 
 struct TaskModel {
+    explicit TaskModel(QString name);
+
     QString name;
-    bool is_done;
+    bool isDone;
 };
 
 #endif // TASKMODEL_H

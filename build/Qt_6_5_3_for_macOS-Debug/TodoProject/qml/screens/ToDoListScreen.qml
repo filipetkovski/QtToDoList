@@ -4,7 +4,7 @@ import QtQuick.Controls
 
 import ListModel 1.0
 
-import "../customcomponents"
+import "../CustomComponents"
 
 Rectangle {
     id: toDoListScreen
@@ -77,7 +77,7 @@ Rectangle {
     //ToDo List Name
     Text {
         id: listNameId
-        text: listFilterModelId.sourceModel.name
+        text: listFilterModelId.sourceModel.mTitle
         font { pixelSize: 25; bold: true; }
         anchors { top: headerTDListScreenId.bottom; topMargin: 20 }
         color: "black"
@@ -86,7 +86,7 @@ Rectangle {
     //ToDo List Description
     Text {
         id: listDescriptionId
-        text: listFilterModelId.sourceModel.description
+        text: listFilterModelId.sourceModel.mDescription
         font.pixelSize: 18
         anchors.top: listNameId.bottom
         color: "gray"
@@ -141,7 +141,7 @@ Rectangle {
             width: 140
             height: 35
             fontSize: 12
-            pushUrlLocation: "../screens/ToDoListScreen.qml"
+            pushUrlLocation: "../Screens/ToDoListScreen.qml"
             anchors { top: inputTDListScreenId.bottom; topMargin: 20 }
             text: qsTr("+ Add this task")
 
@@ -181,13 +181,13 @@ Rectangle {
 
                     //Task Name
                     Text {
-                        text: RoleName
+                        text: RoleTaskName
                         anchors { left: parent.right; leftMargin: 5; }
                         color: "gray"
                         font.pixelSize: 13
                     }
 
-                    onCheckedChanged: listDoneFilterModelId.sourceModel.changeStatus(listDoneFilterModelId.sourceIndex(index), checked)
+                    onCheckedChanged: listDoneFilterModelId.sourceModel.changeTaskStatus(listDoneFilterModelId.sourceIndex(index), checked)
                 }
             }
     }

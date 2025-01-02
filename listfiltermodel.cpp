@@ -1,20 +1,21 @@
 #include "listfiltermodel.h"
+
 #include "listmodel.h"
 
 ListFilterModel::ListFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent), m_showActive(true)
+    : QSortFilterProxyModel(parent), mShowActive(true)
 {
 }
 
 bool ListFilterModel::showActive() const
 {
-    return m_showActive;
+    return mShowActive;
 }
 
 void ListFilterModel::setShowActive(bool active)
 {
-    if (m_showActive != active) {
-        m_showActive = active;
+    if (mShowActive != active) {
+        mShowActive = active;
         invalidateFilter();
         emit showActiveChanged();
     }
@@ -30,7 +31,7 @@ bool ListFilterModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceP
     QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
     bool isActive = sourceModel()->data(index, ListModel::RoleIsDone).toBool();
-    return m_showActive ? !isActive : isActive;
+    return mShowActive ? !isActive : isActive;
 }
 
 

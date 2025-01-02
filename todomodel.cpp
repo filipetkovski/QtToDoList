@@ -1,46 +1,25 @@
 #include "todomodel.h"
+
 #include "listmodel.h"
 
 ToDoModel::ToDoModel(QObject *parent) : QAbstractListModel(parent)
-{
-    addList("Task 1");
-    addList("Task 2");
-    addList("Task 3");
-    addList("Task 4");
-    addList("Task 5");
-    addList("Task 6");
-
-    todo_lists[0]->addTask("Make the bed 1");
-    todo_lists[0]->addTask("Make the bed 2");
-    todo_lists[0]->addTask("Make the bed 3");
-
-    todo_lists[1]->addTask("Make the bed 1");
-    todo_lists[1]->addTask("Make the bed 2");
-
-    todo_lists[2]->addTask("Make the bed 1");
-    todo_lists[2]->addTask("Make the bed 2");
-    todo_lists[2]->addTask("Make the bed 3");
-    todo_lists[2]->addTask("Make the bed 4");
-    todo_lists[2]->addTask("Make the bed 5");
-    todo_lists[2]->addTask("Make the bed 6");
-    todo_lists[2]->addTask("Make the bed 7");
+{ 
 }
 
 ToDoModel::~ToDoModel()
 {
-    for(ListModel* list_model : todo_lists) {
-        delete list_model;
-    }
+    for(ListModel* listModel : mTodoLists)
+        delete listModel;
 }
 
 void ToDoModel::addList(const QString &name)
 {
-    beginInsertRows(QModelIndex(), todo_lists.size(),todo_lists.size());
+    beginInsertRows(QModelIndex(), mTodoLists.size(),mTodoLists.size());
 
-    ListModel *list_model = new ListModel(name);
-    todo_lists.append(list_model);
-    connect(list_model,&ListModel::dataChanged,this,[this,list_model](){
-        int idX = todo_lists.indexOf(list_model);
+    ListModel *listModel = new ListModel(name);
+    mTodoLists.append(listModel);
+    connect(listModel,&ListModel::dataChanged,this,[this,listModel](){
+        int idX = mTodoLists.indexOf(listModel);
         emit dataChanged(index(idX),index(idX));
     });
 
@@ -49,44 +28,44 @@ void ToDoModel::addList(const QString &name)
 
 ListModel *ToDoModel::getListModel(int index) const
 {
-    if (index < 0 || index >= todo_lists.size())
+    if (index < 0 || index >= mTodoLists.size())
         return nullptr;
 
-    return todo_lists.at(index);
+    return mTodoLists.at(index);
 }
 
 void ToDoModel::deleteList(int index)
 {
-    if (index >= 0 && index < todo_lists.size())
+    if (index >= 0 && index < mTodoLists.size())
     {
         beginRemoveRows(QModelIndex(), index,index);
-        delete todo_lists[index];
-        todo_lists.removeAt(index);
+        delete mTodoLists[index];
+        mTodoLists.removeAt(index);
         endRemoveRows();
     }
 }
 
 int ToDoModel::getListSize() const
 {
-    return todo_lists.size();
+    return mTodoLists.size();
 }
 
 int ToDoModel::rowCount(const QModelIndex &parent) const
 {
-    return todo_lists.size();
+    return mTodoLists.size();
 }
 
 QVariant ToDoModel::data(const QModelIndex &index, int role) const
 {
-    const ListModel &list = *todo_lists[index.row()];
-    int tasks_left = list.getTasksLeft();
-    int tasks_size = list.getListSize();
+    const ListModel &list = *mTodoLists[index.row()];
+    int tasksLeft = list.getTasksLeft();
+    int tasksSize = list.getListSize();
 
     switch (role)
     {
-        case RoleActiveListName: return tasks_left > 0 || tasks_size == 0 ? list.getName() : QVariant();
-        case RoleInactiveListName: return tasks_left == 0 && tasks_size > 0 ? list.getName() : QVariant();
-        case RoleTasksLeft: return tasks_left > 0 || tasks_size == 0 ? tasks_left : QVariant();
+        case RoleActiveListName: return tasksLeft > 0 || tasksSize == 0 ? list.getTitle() : QVariant();
+        case RoleInactiveListName: return tasksLeft == 0 && tasksSize > 0 ? list.getTitle() : QVariant();
+        case RoleTasksLeft: return tasksLeft > 0 || tasksSize == 0 ? tasksLeft : QVariant();
     }
 
     return QVariant();

@@ -39,91 +39,95 @@ namespace {
 struct qt_meta_stringdata_CLASSListModelENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSListModelENDCLASS = QtMocHelpers::stringData(
     "ListModel",
-    "nameChanged",
+    "titleChanged",
     "",
     "descriptionChanged",
     "addTask",
-    "name",
-    "changeStatus",
+    "title",
+    "changeTaskStatus",
     "index",
     "isChecked",
     "reorderTasks",
-    "index1",
-    "index2",
-    "editTasks",
+    "fromIndex",
+    "toIndex",
+    "editTitleAndDescription",
     "description",
-    "indX",
-    "updateEditTasks",
     "taskIndex",
+    "updateEditTasks",
     "newText",
-    "deleteTask"
+    "deleteTask",
+    "mTitle",
+    "mDescription"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSListModelENDCLASS_t {
-    uint offsetsAndSizes[38];
+    uint offsetsAndSizes[40];
     char stringdata0[10];
-    char stringdata1[12];
+    char stringdata1[13];
     char stringdata2[1];
     char stringdata3[19];
     char stringdata4[8];
-    char stringdata5[5];
-    char stringdata6[13];
+    char stringdata5[6];
+    char stringdata6[17];
     char stringdata7[6];
     char stringdata8[10];
     char stringdata9[13];
-    char stringdata10[7];
-    char stringdata11[7];
-    char stringdata12[10];
+    char stringdata10[10];
+    char stringdata11[8];
+    char stringdata12[24];
     char stringdata13[12];
-    char stringdata14[5];
+    char stringdata14[10];
     char stringdata15[16];
-    char stringdata16[10];
-    char stringdata17[8];
-    char stringdata18[11];
+    char stringdata16[8];
+    char stringdata17[11];
+    char stringdata18[7];
+    char stringdata19[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSListModelENDCLASS_t::offsetsAndSizes) + ofs), len 
 Q_CONSTINIT static const qt_meta_stringdata_CLASSListModelENDCLASS_t qt_meta_stringdata_CLASSListModelENDCLASS = {
     {
         QT_MOC_LITERAL(0, 9),  // "ListModel"
-        QT_MOC_LITERAL(10, 11),  // "nameChanged"
-        QT_MOC_LITERAL(22, 0),  // ""
-        QT_MOC_LITERAL(23, 18),  // "descriptionChanged"
-        QT_MOC_LITERAL(42, 7),  // "addTask"
-        QT_MOC_LITERAL(50, 4),  // "name"
-        QT_MOC_LITERAL(55, 12),  // "changeStatus"
-        QT_MOC_LITERAL(68, 5),  // "index"
-        QT_MOC_LITERAL(74, 9),  // "isChecked"
-        QT_MOC_LITERAL(84, 12),  // "reorderTasks"
-        QT_MOC_LITERAL(97, 6),  // "index1"
-        QT_MOC_LITERAL(104, 6),  // "index2"
-        QT_MOC_LITERAL(111, 9),  // "editTasks"
-        QT_MOC_LITERAL(121, 11),  // "description"
-        QT_MOC_LITERAL(133, 4),  // "indX"
-        QT_MOC_LITERAL(138, 15),  // "updateEditTasks"
-        QT_MOC_LITERAL(154, 9),  // "taskIndex"
-        QT_MOC_LITERAL(164, 7),  // "newText"
-        QT_MOC_LITERAL(172, 10)   // "deleteTask"
+        QT_MOC_LITERAL(10, 12),  // "titleChanged"
+        QT_MOC_LITERAL(23, 0),  // ""
+        QT_MOC_LITERAL(24, 18),  // "descriptionChanged"
+        QT_MOC_LITERAL(43, 7),  // "addTask"
+        QT_MOC_LITERAL(51, 5),  // "title"
+        QT_MOC_LITERAL(57, 16),  // "changeTaskStatus"
+        QT_MOC_LITERAL(74, 5),  // "index"
+        QT_MOC_LITERAL(80, 9),  // "isChecked"
+        QT_MOC_LITERAL(90, 12),  // "reorderTasks"
+        QT_MOC_LITERAL(103, 9),  // "fromIndex"
+        QT_MOC_LITERAL(113, 7),  // "toIndex"
+        QT_MOC_LITERAL(121, 23),  // "editTitleAndDescription"
+        QT_MOC_LITERAL(145, 11),  // "description"
+        QT_MOC_LITERAL(157, 9),  // "taskIndex"
+        QT_MOC_LITERAL(167, 15),  // "updateEditTasks"
+        QT_MOC_LITERAL(183, 7),  // "newText"
+        QT_MOC_LITERAL(191, 10),  // "deleteTask"
+        QT_MOC_LITERAL(202, 6),  // "mTitle"
+        QT_MOC_LITERAL(209, 12)   // "mDescription"
     },
     "ListModel",
-    "nameChanged",
+    "titleChanged",
     "",
     "descriptionChanged",
     "addTask",
-    "name",
-    "changeStatus",
+    "title",
+    "changeTaskStatus",
     "index",
     "isChecked",
     "reorderTasks",
-    "index1",
-    "index2",
-    "editTasks",
+    "fromIndex",
+    "toIndex",
+    "editTitleAndDescription",
     "description",
-    "indX",
-    "updateEditTasks",
     "taskIndex",
+    "updateEditTasks",
     "newText",
-    "deleteTask"
+    "deleteTask",
+    "mTitle",
+    "mDescription"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -152,7 +156,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListModelENDCLASS[] = {
        9,    2,   72,    2, 0x02,   10 /* Public */,
       12,    3,   77,    2, 0x02,   13 /* Public */,
       15,    2,   84,    2, 0x02,   17 /* Public */,
-      18,    1,   89,    2, 0x02,   20 /* Public */,
+      17,    1,   89,    2, 0x02,   20 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -163,12 +167,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSListModelENDCLASS[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Bool,    7,    8,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   10,   11,
     QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Int,    5,   13,   14,
-    QMetaType::Void, QMetaType::Int, QMetaType::QString,   16,   17,
-    QMetaType::Void, QMetaType::Int,   16,
+    QMetaType::Void, QMetaType::Int, QMetaType::QString,   14,   16,
+    QMetaType::Void, QMetaType::Int,   14,
 
  // properties: name, type, flags
-       5, QMetaType::QString, 0x00015903, uint(0), 0,
-      13, QMetaType::QString, 0x00015903, uint(1), 0,
+      18, QMetaType::QString, 0x00015803, uint(0), 0,
+      19, QMetaType::QString, 0x00015803, uint(1), 0,
 
        0        // eod
 };
@@ -180,20 +184,20 @@ Q_CONSTINIT const QMetaObject ListModel::staticMetaObject = { {
     qt_static_metacall,
     nullptr,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSListModelENDCLASS_t,
-        // property 'name'
+        // property 'mTitle'
         QtPrivate::TypeAndForceComplete<QString, std::true_type>,
-        // property 'description'
+        // property 'mDescription'
         QtPrivate::TypeAndForceComplete<QString, std::true_type>,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<ListModel, std::true_type>,
-        // method 'nameChanged'
+        // method 'titleChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'descriptionChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'addTask'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        // method 'changeStatus'
+        // method 'changeTaskStatus'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
@@ -201,7 +205,7 @@ Q_CONSTINIT const QMetaObject ListModel::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'editTasks'
+        // method 'editTitleAndDescription'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
@@ -223,12 +227,12 @@ void ListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<ListModel *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->nameChanged(); break;
+        case 0: _t->titleChanged(); break;
         case 1: _t->descriptionChanged(); break;
         case 2: _t->addTask((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 3: _t->changeStatus((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 3: _t->changeTaskStatus((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
         case 4: _t->reorderTasks((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
-        case 5: _t->editTasks((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
+        case 5: _t->editTitleAndDescription((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
         case 6: _t->updateEditTasks((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
         case 7: _t->deleteTask((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
@@ -237,7 +241,7 @@ void ListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (ListModel::*)();
-            if (_t _q_method = &ListModel::nameChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &ListModel::titleChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
@@ -254,7 +258,7 @@ void ListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         void *_v = _a[0];
         switch (_id) {
-        case 0: *reinterpret_cast< QString*>(_v) = _t->getName(); break;
+        case 0: *reinterpret_cast< QString*>(_v) = _t->getTitle(); break;
         case 1: *reinterpret_cast< QString*>(_v) = _t->getDescription(); break;
         default: break;
         }
@@ -263,7 +267,7 @@ void ListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         void *_v = _a[0];
         switch (_id) {
-        case 0: _t->setName(*reinterpret_cast< QString*>(_v)); break;
+        case 0: _t->setTitle(*reinterpret_cast< QString*>(_v)); break;
         case 1: _t->setDescription(*reinterpret_cast< QString*>(_v)); break;
         default: break;
         }
@@ -308,7 +312,7 @@ int ListModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ListModel::nameChanged()
+void ListModel::titleChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }

@@ -4,8 +4,9 @@ import QtQuick.Controls
 
 import ToDoModel 1.0
 import ListModel 1.0
-import "customcomponents"
-import "screens"
+
+import "CustomComponents"
+import "Screens"
 
 Window {
     id: applicationWindow
@@ -22,26 +23,26 @@ Window {
     {
         id: toDoFilterModelId
         sourceModel: toDoModelId
-        showActive: true
+        mShowActive: true
     }
 
     ToDoFilterModel
     {
         id: completedToDoFilterModel
         sourceModel: toDoModelId
-        showActive: false
+        mShowActive: false
     }
 
     ListFilterModel
     {
         id: listFilterModelId
-        showActive: true
+        mShowActive: true
     }
 
     ListFilterModel
     {
         id: listDoneFilterModelId
-        showActive: false
+        mShowActive: false
     }
 
     Rectangle {
@@ -65,7 +66,7 @@ Window {
             replaceEnter: Transition { XAnimator { duration: 0 } }
             replaceExit: Transition { XAnimator { duration: 0 } }
 
-            initialItem: "screens/HomeScreen.qml"
+            initialItem: "Screens/HomeScreen.qml"
         }
     }
 }

@@ -69,14 +69,14 @@ MouseArea {
 
             //Task Name
             Text {
-                text: RoleName
+                text: RoleTaskName
                 color: "black"
                 anchors { left: parent.right; leftMargin: 5; }
                 font.pixelSize: 16
             }
 
             onCheckedChanged: {
-                listDoneFilterModelId.sourceModel.changeStatus(listFilterModelId.sourceIndex(index), checked)
+                listDoneFilterModelId.sourceModel.changeTaskStatus(listFilterModelId.sourceIndex(index), checked)
                 if(tasksViewId.count <= 1)
                     toDoListScreen.resetDragTxtVisible()
             }

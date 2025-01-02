@@ -1,4 +1,4 @@
-// /qt/qml/TodoProject/qml/customcomponents/InputField.qml
+// /qt/qml/TodoProject/Qml/CustomComponents/InputField.qml
 #include <QtQml/qqmlprivate.h>
 #include <QtCore/qdatetime.h>
 #include <QtCore/qobject.h>
@@ -15,7 +15,7 @@
 #include <QtQml/qqmllist.h>
 #include <type_traits>
 namespace QmlCacheGeneratedCode {
-namespace _qt_qml_TodoProject_qml_customcomponents_InputField_qml {
+namespace _qt_qml_TodoProject_Qml_CustomComponents_InputField_qml {
 extern const unsigned char qmlData alignas(16) [];
 extern const unsigned char qmlData alignas(16) [] = {
 

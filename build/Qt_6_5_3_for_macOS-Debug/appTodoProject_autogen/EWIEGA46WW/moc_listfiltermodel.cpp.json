@@ -22,7 +22,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "name": "showActive",
+                    "name": "mShowActive",
                     "notify": "showActiveChanged",
                     "read": "showActive",
                     "required": false,

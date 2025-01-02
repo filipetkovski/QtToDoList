@@ -7,7 +7,7 @@
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "name",
+                            "name": "title",
                             "type": "QString"
                         }
                     ],
@@ -26,18 +26,18 @@
                             "type": "bool"
                         }
                     ],
-                    "name": "changeStatus",
+                    "name": "changeTaskStatus",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "index1",
+                            "name": "fromIndex",
                             "type": "int"
                         },
                         {
-                            "name": "index2",
+                            "name": "toIndex",
                             "type": "int"
                         }
                     ],
@@ -48,7 +48,7 @@
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "name",
+                            "name": "title",
                             "type": "QString"
                         },
                         {
@@ -56,11 +56,11 @@
                             "type": "QString"
                         },
                         {
-                            "name": "indX",
+                            "name": "taskIndex",
                             "type": "int"
                         }
                     ],
-                    "name": "editTasks",
+                    "name": "editTitleAndDescription",
                     "returnType": "void"
                 },
                 {
@@ -97,22 +97,22 @@
                     "designable": true,
                     "final": true,
                     "index": 0,
-                    "name": "name",
-                    "notify": "nameChanged",
-                    "read": "getName",
+                    "name": "mTitle",
+                    "notify": "titleChanged",
+                    "read": "getTitle",
                     "required": false,
                     "scriptable": true,
                     "stored": true,
                     "type": "QString",
                     "user": false,
-                    "write": "setName"
+                    "write": "setTitle"
                 },
                 {
                     "constant": false,
                     "designable": true,
                     "final": true,
                     "index": 1,
-                    "name": "description",
+                    "name": "mDescription",
                     "notify": "descriptionChanged",
                     "read": "getDescription",
                     "required": false,
@@ -127,7 +127,7 @@
             "signals": [
                 {
                     "access": "public",
-                    "name": "nameChanged",
+                    "name": "titleChanged",
                     "returnType": "void"
                 },
                 {

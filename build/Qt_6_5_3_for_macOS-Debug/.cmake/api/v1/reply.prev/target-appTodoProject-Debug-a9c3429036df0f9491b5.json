@@ -882,19 +882,19 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 62,
-			"id" : "appTodoProject_tooling::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 69,
-			"id" : "appTodoProject_qmlimportscan::@6890427a1f51a3e7e1df"
+			"id" : "appTodoProject_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,
 			"id" : "appTodoProject_autogen::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appTodoProject_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 62,
+			"id" : "appTodoProject_tooling::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 69,
+			"id" : "appTodoProject_qmlimportscan::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appTodoProject::@6890427a1f51a3e7e1df",
@@ -1193,7 +1193,7 @@
 		},
 		{
 			"backtrace" : 80,
-			"path" : "qml/Main.qml",
+			"path" : "Qml/Main.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -1207,115 +1207,115 @@
 			"backtrace" : 83,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/Main_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Main_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 84,
-			"path" : "qml/customcomponents/Header.qml",
+			"path" : "Qml/customcomponents/Header.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 85,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/Header_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/customcomponents/Header_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 86,
-			"path" : "qml/screens/ToDoListScreen.qml",
+			"path" : "Qml/Screens/ToDoListScreen.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 87,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/ToDoListScreen_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/ToDoListScreen_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 88,
-			"path" : "qml/screens/HomeScreen.qml",
+			"path" : "Qml/Screens/HomeScreen.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 89,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/HomeScreen_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/HomeScreen_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 90,
-			"path" : "qml/screens/CreateListScreen.qml",
+			"path" : "Qml/Screens/CreateListScreen.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 91,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/CreateListScreen_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/CreateListScreen_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 92,
-			"path" : "qml/customcomponents/InputField.qml",
+			"path" : "Qml/CustomComponents/InputField.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 93,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/InputField_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/InputField_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 94,
-			"path" : "qml/customcomponents/ConfirmButton.qml",
+			"path" : "Qml/CustomComponents/ConfirmButton.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 95,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ConfirmButton_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/ConfirmButton_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 96,
-			"path" : "qml/screens/EditListScreen.qml",
+			"path" : "Qml/Screens/EditListScreen.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 97,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/EditListScreen_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/EditListScreen_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 98,
-			"path" : "qml/customcomponents/TextButton.qml",
+			"path" : "Qml/CustomComponents/TextButton.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 99,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/TextButton_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/TextButton_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 100,
-			"path" : "qml/customcomponents/ActiveTasksComponent.qml",
+			"path" : "Qml/CustomComponents/ActiveTasksComponent.qml",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 101,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ActiveTasksComponent_qml.cpp",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/ActiveTasksComponent_qml.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1363,61 +1363,61 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/Main_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Main_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/Header_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/customcomponents/Header_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/ToDoListScreen_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/ToDoListScreen_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/HomeScreen_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/HomeScreen_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/CreateListScreen_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/CreateListScreen_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/InputField_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/InputField_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ConfirmButton_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/ConfirmButton_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/screens/EditListScreen_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/Screens/EditListScreen_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/TextButton_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/TextButton_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_qml/customcomponents/ActiveTasksComponent_qml.cpp.rule",
+			"path" : "build/Qt_6_5_3_for_macOS-Debug/.rcc/qmlcache/appTodoProject_Qml/CustomComponents/ActiveTasksComponent_qml.cpp.rule",
 			"sourceGroupIndex" : 3
 		},
 		{

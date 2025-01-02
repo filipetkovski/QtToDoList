@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 
-import "../customcomponents"
+import "../CustomComponents"
 
 FocusScope {
     id: createNewListScreen
@@ -44,7 +44,7 @@ FocusScope {
             titleSize: 18
             width: rec.width
             height: 50
-            text: listFilterModelId.sourceModel.name
+            text: listFilterModelId.sourceModel.mTitle
             anchors.top: editInputsId.top
             inputTxtSize: 15
         }
@@ -68,7 +68,7 @@ FocusScope {
                 titleSize: 0
                 width: rec.width
                 height: 50
-                text: RoleName
+                text: RoleTaskName
                 inputTxtSize: 15
 
                 ConfirmButton {
@@ -96,7 +96,7 @@ FocusScope {
             titleSize: 18
             width: rec.width
             height: 50
-            text: listFilterModelId.sourceModel.description
+            text: listFilterModelId.sourceModel.mDescription
             inputTxtSize: 15
         }
     }
@@ -116,12 +116,12 @@ FocusScope {
                     var taskDelegate = editTasksViewId.contentItem.children[i];
                     var indX = listFilterModelId.sourceIndex(i);
 
-                    if (taskDelegate && taskDelegate.text !== taskDelegate.RoleName && taskDelegate.text !== "")
+                    if (taskDelegate && taskDelegate.text !== taskDelegate.RoleTaskName && taskDelegate.text !== "")
                         listFilterModelId.sourceModel.updateEditTasks(indX, taskDelegate.text)
                 }
             }
 
-            listFilterModelId.sourceModel.editTasks(editTitleId.text, editDescId.text, modelIndex)
+            listFilterModelId.sourceModel.editTitleAndDescription(editTitleId.text, editDescId.text, modelIndex)
 
             //Delete the tasks
             for(var j=editTasksViewId.tasksToBeDeleted.length-1;j>=0;j--)
