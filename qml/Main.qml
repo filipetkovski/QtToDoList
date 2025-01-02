@@ -4,8 +4,9 @@ import QtQuick.Controls
 
 import ToDoModel 1.0
 import ListModel 1.0
-import "customcomponents"
-import "screens"
+
+import "CustomComponents"
+import "Screens"
 
 Window {
     id: applicationWindow
@@ -18,54 +19,47 @@ Window {
         id: toDoModelId
     }
 
-    ToDoFilterModel
-    {
+    ToDoFilterModel {
         id: toDoFilterModelId
         sourceModel: toDoModelId
-        showActive: true
+        mShowActive: true
     }
 
-    ToDoFilterModel
-    {
+    ToDoFilterModel {
         id: completedToDoFilterModel
         sourceModel: toDoModelId
-        showActive: false
+        mShowActive: false
     }
 
-    ListFilterModel
-    {
+    ListFilterModel {
         id: listFilterModelId
-        showActive: true
+        mShowActive: true
     }
 
-    ListFilterModel
-    {
+    ListFilterModel {
         id: listDoneFilterModelId
-        showActive: false
+        mShowActive: false
     }
 
     Rectangle {
         id: rec
         width: 800
         height: applicationWindow.height - 50
+        anchors { horizontalCenter: parent.horizontalCenter; verticalCenter: parent.verticalCenter; topMargin: 50; }
         color: "white"
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.topMargin: 50
 
         StackView {
             id: windowStackView
-
             anchors.fill: rec
+            initialItem: "Screens/HomeScreen.qml"
 
-            pushEnter: Transition { XAnimator { duration: 0 } }
-            pushExit: Transition { XAnimator { duration: 0 } }
-            popEnter: Transition { XAnimator { duration: 0 } }
-            popExit: Transition { XAnimator { duration: 0 } }
-            replaceEnter: Transition { XAnimator { duration: 0 } }
-            replaceExit: Transition { XAnimator { duration: 0 } }
+            pushEnter: stackTransitionId; pushExit: stackTransitionId
+            popEnter: stackTransitionId; popExit: stackTransitionId
 
-            initialItem: "screens/HomeScreen.qml"
+            Transition {
+                id: stackTransitionId
+                XAnimator { duration: 0 }
+            }
         }
     }
 }

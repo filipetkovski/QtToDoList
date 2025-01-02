@@ -1,10 +1,9 @@
 import QtQuick
 import QtQuick.Layouts
 
-import "../customcomponents"
+import "../CustomComponents"
 
 FocusScope {
-    id: createNewListScreen
     property int modelIndex: -1
 
     onModelIndexChanged: {
@@ -44,7 +43,7 @@ FocusScope {
             titleSize: 18
             width: rec.width
             height: 50
-            text: listFilterModelId.sourceModel.name
+            text: listFilterModelId.sourceModel.mTitle
             anchors.top: editInputsId.top
             inputTxtSize: 15
         }
@@ -59,20 +58,17 @@ FocusScope {
             reuseItems: false
 
             model: listFilterModelId
-
             spacing: 1
-
             delegate: InputField {
                 id: editTaskId
                 textTitle: qsTr("")
                 titleSize: 0
                 width: rec.width
                 height: 50
-                text: RoleName
+                text: RoleTaskName
                 inputTxtSize: 15
 
                 ConfirmButton {
-                    id: deleteTaskId
                     anchors { left: inputFieldId.right; leftMargin: 5; verticalCenter: inputFieldId.verticalCenter; }
                     text: qsTr("X")
                     fontSize: 10
@@ -96,7 +92,7 @@ FocusScope {
             titleSize: 18
             width: rec.width
             height: 50
-            text: listFilterModelId.sourceModel.description
+            text: listFilterModelId.sourceModel.mDescription
             inputTxtSize: 15
         }
     }
@@ -110,20 +106,21 @@ FocusScope {
         height: 35
 
         onBtnClicked: {
-            //Edit task inputs
+            // Edit task inputs
             if(listFilterModelId.sourceModel !== null) {
                 for (var i = 0; i < editTasksViewId.contentItem.children.length-1; i++) {
                     var taskDelegate = editTasksViewId.contentItem.children[i];
                     var indX = listFilterModelId.sourceIndex(i);
 
-                    if (taskDelegate && taskDelegate.text !== taskDelegate.RoleName && taskDelegate.text !== "")
+                    if (taskDelegate && taskDelegate.text !== taskDelegate.RoleTaskName && taskDelegate.text !== "")
                         listFilterModelId.sourceModel.updateEditTasks(indX, taskDelegate.text)
                 }
             }
 
-            listFilterModelId.sourceModel.editTasks(editTitleId.text, editDescId.text, modelIndex)
+            // Edit task title and description
+            listFilterModelId.sourceModel.editTitleAndDescription(editTitleId.text, editDescId.text, modelIndex)
 
-            //Delete the tasks
+            // Delete the selected tasks
             for(var j=editTasksViewId.tasksToBeDeleted.length-1;j>=0;j--)
                 listFilterModelId.sourceModel.deleteTask(listFilterModelId.sourceIndex(editTasksViewId.tasksToBeDeleted[j]))
 
@@ -132,7 +129,6 @@ FocusScope {
     }
 
     TextButton {
-        id: cancelBt2nEditId
         anchors { left: confirmEditId.right; leftMargin: 15; verticalCenter: confirmEditId.verticalCenter; }
         onBtnClicked: windowStackView.pop()
     }
